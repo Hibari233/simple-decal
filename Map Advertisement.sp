@@ -179,7 +179,7 @@ void SQL_MakeConnection()
 	if (g_dDatabase != null)
 		delete g_dDatabase;
 	char szError[512];
-	g_dDatabase = SQL_Connect("XsBro_decals", true, szError, sizeof(szError));
+	g_dDatabase = SQL_Connect("xs_mapad", true, szError, sizeof(szError));
 	if (g_dDatabase == null)
 	{
 		SetFailState("Cannot connect to datbase error: %s", szError);
