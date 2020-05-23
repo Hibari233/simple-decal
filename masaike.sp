@@ -17,9 +17,9 @@ enum decalSettings
 }
 public Plugin myinfo =
 {
-	name = "masaike",
-	author = "www.nicotine.vip[neko]",
-	description = "masaike plugin",
+	name = "Map Advertisement",
+	author = "Forked from Neko",
+	description = "Advertisement plugin",
 	version = "0.1"
 };
 
@@ -80,7 +80,7 @@ LoadDecal()
 	char szPath[PLATFORM_MAX_PATH];
 	BuildPath(Path_SM, szPath,PLATFORM_MAX_PATH, "configs/decal.cfg");
 	if (!FileExists(szPath))
-		SetFailState("Couldn't find file: %s", szPath);
+		SetFailState("找不到这个文件: %s", szPath);
 	
 	KeyValues kConfig = new KeyValues("");
 	kConfig.ImportFromFile(szPath);
@@ -179,7 +179,7 @@ void SQL_MakeConnection()
 	if (g_dDatabase != null)
 		delete g_dDatabase;
 	char szError[512];
-	g_dDatabase = SQL_Connect("neko", true, szError, sizeof(szError));
+	g_dDatabase = SQL_Connect("XsBro_decals", true, szError, sizeof(szError));
 	if (g_dDatabase == null)
 	{
 		SetFailState("Cannot connect to datbase error: %s", szError);
